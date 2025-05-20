@@ -6,7 +6,7 @@
 @Author  :   PhoenixDai
 @Version :   1.0
 @Site    :   http://phoenixdai.cn
-@Desc    :   对DynaViTw进行蒸馏的最初等的ViT预训练
+@Desc    :   对DynaViTw进行蒸馏的最初等的ViT预训练（First Step）
 """
 import torch
 from torch.utils.data import DataLoader

@@ -6,7 +6,7 @@
 @Author  :   PhoenixDai
 @Version :   1.0
 @Site    :   http://phoenixdai.cn
-@Desc    :   主要NAS生成Coarse Header文件
+@Desc    :   使用NAS进行生成Coarse Header。
 """
 import argparse
 import glob

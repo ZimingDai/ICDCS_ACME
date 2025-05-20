@@ -6,7 +6,7 @@
 @Author  :   PhoenixDai
 @Version :   1.0
 @Site    :   http://phoenixdai.cn
-@Desc    :   定义Header框架以及ViT框架
+@Desc    :   定义NAS生成的Header框架以及ViT对接框架
 """
 
 import torch

@@ -6,7 +6,7 @@
 @Author  :   PhoenixDai
 @Version :   1.0
 @Site    :   http://phoenixdai.cn
-@Desc    :   在16种不同的Backbone上运行不同Header
+@Desc    :   在不同Transformer数量下测试Acc.
 """
 
 from cloud_func import *

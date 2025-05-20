@@ -6,7 +6,7 @@
 @Author  :   PhoenixDai
 @Version :   1.0
 @Site    :   http://phoenixdai.cn
-@Desc    :
+@Desc    :   一些函数的定义
 """
 import os
 import math

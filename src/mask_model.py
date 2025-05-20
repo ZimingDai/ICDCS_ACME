@@ -6,7 +6,7 @@
 @Author  :   PhoenixDai
 @Version :   1.0
 @Site    :   http://phoenixdai.cn
-@Desc    :   在代码中用来对接Prune的废弃代码
+@Desc    :   在代码中用来对接Prune的废弃代码（最开始尝试与第三步进行拼接，但是fail了）
 """
 import torch.nn.functional as F
 from cloud_func import *

@@ -6,7 +6,7 @@
 @Author  :   PhoenixDai
 @Version :   1.0
 @Site    :   http://phoenixdai.cn
-@Desc    :   云服务器运行的生成DynaViTw和DynaViT
+@Desc    :   云服务器运行的生成DynaViTw和DynaViT（两次蒸馏采用了一套代码）
 """
 
 from __future__ import absolute_import, division, print_function

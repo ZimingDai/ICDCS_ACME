@@ -1,3 +1,13 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+@File    :   vit_head.py
+@Time    :   2024/06/14 14:48:21
+@Author  :   PhoenixDai
+@Version :   1.0
+@Site    :   http://phoenixdai.cn
+@Desc    :   对ViT的宽度进行修改的测试代码
+"""
 import argparse
 import random
 import torch

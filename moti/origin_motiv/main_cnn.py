@@ -1,3 +1,14 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+@File    :   main_cnn.py
+@Time    :   2024/06/14 14:48:21
+@Author  :   PhoenixDai
+@Version :   1.0
+@Site    :   http://phoenixdai.cn
+@Desc    :   预训练加载不同的CNN作为Header在CIFAR-100的Acc
+"""
+
 import argparse
 import json
 

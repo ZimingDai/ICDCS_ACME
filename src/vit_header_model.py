@@ -6,7 +6,7 @@
 @Author  :   PhoenixDai
 @Version :   1.0
 @Site    :   http://phoenixdai.cn
-@Desc    :   所有ViT+各种Header的模型定义
+@Desc    :   Baseline下所有ViT+各种Header的模型定义
 """
 from cloud_func import *
 

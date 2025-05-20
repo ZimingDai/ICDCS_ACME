@@ -1,80 +1,89 @@
 
-# FormerTailor: Customized Large Model Adaptation in Heterogeneous Cloud-Edge-Device Systems
+# ACME: Adaptive Customization of Large Models via Distributed Systems
 
-本仓库包含论文"**FormerTailor: Customized Large Model Adaptation in Heterogeneous Cloud-Edge-Device Systems**"的代码
+[![切换为英文版](https://img.shields.io/badge/GitHub-Chinese-blue?logo=github)](./README_CN.md)
 
-## 项目结构说明
+This repository contains the official implementation of the ICDCS 2025 accepted paper **"ACME: Adaptive Customization of Large Models via Distributed Systems"**.
 
-```
-├── data                      # 数据文件夹，用于存放数据集
-├── draw                      # 绘图相关文件夹，用于存放生成的图像或绘图脚本
-├── log                       # 日志文件夹，用于存放项目运行时生成的日志
-├── model                     # 模型文件夹，用于存放训练好的模型或模型定义文件
-├── moti                      # 动机相关的文件夹，用于存放动机分析的相关内容
-│   └── origin_motiv          # 原始动机文件夹
-│       └── log               # 存放原始动机分析过程中的日志
-├── runs                      # 实验运行记录文件夹，用于存放实验运行的结果或中间文件
-└── src                       # 源代码文件夹，包含项目的主要代码
-    ├── backup                # 存放需要替换Transformer库的文件
-    └── shell                 # Shell脚本文件夹，用于存放自动化任务的Shell脚本
+## 📚Overview
+
+ACME (Adaptive Customization of Large Models via Distributed Systems) is a framework designed to adaptively customize large Transformer-based models across distributed systems. It addresses major deployment challenges such as **model-device mismatch, resource constraints, and data heterogeneity**. ACME proposes a **bidirectional single-loop distributed system** that enables progressive model customization through collaboration between the cloud, edge servers, and devices. By separating **backbone generation** and **data-aware header refinement**, and avoiding direct transmission of local data, ACME achieves **high accuracy with minimal communication cost**, enabling efficient and personalized model deployment at scale.
+
+## 📁 Project Structure
 
 ```
+├── data/                    # Datasets (place CIFAR-100 or Stanford Cars here)
+├── draw/                    # Figure generation scripts and outputs
+├── log/                     # Logs during training/experiments
+├── model/                   # Model definitions and pretrained models
+├── moti/                    # Motivation analysis materials
+│   └── origin_motiv/
+│       └── log/             # Original motivation experiment logs
+├── runs/                    # Experimental results and intermediate files
+└── src/                     # Main source code
+    ├── backup/              # Customized files to override parts of Transformers
+    └── shell/               # Shell scripts for automated execution
+```
 
-## 预先条件
+## 🛠️ Prerequisites
 
-1. 下载并安装 `requirements.txt` 中要求的软件包：
-   
-    ```bash
-    pip install -r requirements.txt
-    ```
-    
-2. 下载预训练的 `vit-base-patch16-224` 模型，并将其放置在 `model` 目录下。
+1. Install dependencies:
 
-3. 手动下载 CIFAR-100 或 Stanford Cars 数据集，并将其放置在 `data` 目录下。
-
-4. 使用 `src/backup` 中的文件替换 Transformers 库中相应的文件：
-
-   - 定位到您的 Transformers 库安装目录。
-   - 将 `src/backup` 中的文件复制到 Transformers 库的相应位置。
-
-## 运行代码要求
-
-要运行代码，请执行以下 shell 脚本：
-
-1. 运行`cloud_pretrain.py`来获得预训练模型（注意调整`NAME`参数）。
-    ```bash
-    python cloud_pretrain.py 
-    ```
-
-2. 运行云端执行的第一个脚本获得**dynaViTw**
-    ```bash
-    ./run_cloud1.sh
-    ```
-
-3. 运行云端执行的第二个脚本获得**dynaViT**
-
-   ```sh
-   ./run_cloud2.sh
+   ```bash
+   pip install -r requirements.txt
    ```
 
-4. 运行边缘侧的NAS代码
+2. Download the pretrained model:
 
-   ```sh
-   ./run_nas.sh
+   - [vit-base-patch16-224](https://huggingface.co/google/vit-base-patch16-224)
+   - Place it in the `model/` directory.
+
+3. Download datasets:
+
+   - [CIFAR-100](https://www.cs.toronto.edu/~kriz/cifar.html)
+   - [Stanford Cars](https://ai.stanford.edu/~jkrause/cars/car_dataset.html)
+   - Place them in the `data/` directory.
+
+4. ⚠️ **Important: Overwriting Transformers Source Code**
+
+   To enable customized behavior, you must **manually replace** parts of the Transformers library:
+
+   - Locate the installation path of your local Transformers library (typically `site-packages/transformers/`)
+   - Copy and **overwrite** the corresponding files from `src/backup/` into the above directory
+
+   > ⚠ Warning: This operation modifies the default implementation of Transformers. Proceed only if you understand the changes, and it is highly recommended to use a virtual environment to avoid affecting other projects.
+
+
+## 🚀 How to Run
+
+1. Run cloud pretraining:
+
+   ```bash
+   python cloud_pretrain.py
    ```
 
-   
+2. Run cloud script for **DynaViTw**:
 
-## 模型与训练集下载介绍
+   ```bash
+   bash ./src/shell/run_cloud1.sh
+   ```
 
-* [vit-base-patch16-224](https://huggingface.co/google/vit-base-patch16-224)
+3. Run cloud script for **DynaViT**:
 
-- [CIFAR-100](https://www.cs.toronto.edu/~kriz/cifar.html)
-- [Stanford Cars](https://ai.stanford.edu/~jkrause/cars/car_dataset.html)
+   ```bash
+   bash ./src/shell/run_cloud2.sh
+   ```
 
-确保将下载的数据集放置在 `data` 目录中，模型放到`src`中。
+4. Run edge-side NAS:
 
+   ```bash
+   bash ./src/shell/run_nas.sh
+   ```
 
+## 📦 Model and Dataset Links
 
-
-
+| Type | Name | Link |
+|------|------|------|
+| Model | vit-base-patch16-224 | [Download from Hugging Face](https://huggingface.co/google/vit-base-patch16-224) |
+| Dataset | CIFAR-100 | [Official CIFAR Site](https://www.cs.toronto.edu/~kriz/cifar.html) |
+| Dataset | Stanford Cars | [Stanford AI Lab](https://ai.stanford.edu/~jkrause/cars/car_dataset.html) |
