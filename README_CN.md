@@ -14,6 +14,8 @@ ACME（Adaptive Customization of Large Models via Distributed Systems）是一�
 ```
 ├── data/                    # 数据集目录（请放置 CIFAR-100 或 Stanford Cars）
 ├── draw/                    # 绘图脚本与输出
+│		├── draw_challenge_motiv/            
+│   └── draw_experi/ 
 ├── log/                     # 实验运行日志
 ├── model/                   # 模型定义与预训练模型文件
 ├── moti/                    # 动机分析相关内容
