@@ -24,7 +24,8 @@ ACME（Adaptive Customization of Large Models via Distributed Systems）是一�
 ├── runs/                    # 实验结果与中间文件
 └── src/                     # 项目主代码
     ├── backup/              # 替换 Transformers 库的自定义代码
-    └── shell/               # 自动化执行的 Shell 脚本
+    ├── shell/               # 自动化执行的 Shell 脚本
+    └── third_part/					 # ⚠️论文第三部分细粒度个性化的独立工程⚠️
 ```
 
 ## 🛠️ 环境准备
@@ -53,6 +54,10 @@ ACME（Adaptive Customization of Large Models via Distributed Systems）是一�
 
    > ⚠ 警告：此操作将修改 Transformers 的默认实现，请确保你了解替换内容，并建议在虚拟环境中操作以避免影响其他项目。
 
+5. ⚠️ **注意：`src/third_part/` 是论文第三部分的独立工程**
+
+   
+
 
 ## 🚀 实验运行
 
@@ -79,6 +84,13 @@ ACME（Adaptive Customization of Large Models via Distributed Systems）是一�
    ```bash
    bash ./src/shell/run_nas.sh
    ```
+
+5. ⚠️ 若要运行第三部分细粒度个性化实验，请进入 `src/third_part/`，参考“环境准备”部分说明，单独运行：
+
+    ```bash
+    cd src/third_part
+    bash run.sh
+    ```
 
 ## 📦 模型与数据集链接
 

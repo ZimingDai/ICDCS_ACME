@@ -25,6 +25,7 @@ ACME (Adaptive Customization of Large Models via Distributed Systems) is a frame
 └── src/                     # Main source code
     ├── backup/              # Customized files to override parts of Transformers
     └── shell/               # Shell scripts for automated execution
+    └── third_part/ 				 # ⚠️Independent implementation for Part III of the paper⚠️
 ```
 
 ## 🛠️ Prerequisites
@@ -54,6 +55,8 @@ ACME (Adaptive Customization of Large Models via Distributed Systems) is a frame
    - Copy and **overwrite** the corresponding files from `src/backup/` into the above directory
 
    > ⚠ Warning: This operation modifies the default implementation of Transformers. Proceed only if you understand the changes, and it is highly recommended to use a virtual environment to avoid affecting other projects.
+   
+5. ⚠️ **Note: `src/third_part/` is a standalone project for Part III of the paper**
 
 
 ## 🚀 How to Run
@@ -80,6 +83,13 @@ ACME (Adaptive Customization of Large Models via Distributed Systems) is a frame
 
    ```bash
    bash ./src/shell/run_nas.sh
+   ```
+
+5. ⚠️ To run the fine-grained personalization in Part III, go to `src/third_part/` and execute:
+
+   ```bash
+   cd src/third_part
+   bash run.sh
    ```
 
 ## 📦 Model and Dataset Links
