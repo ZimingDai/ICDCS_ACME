@@ -14,8 +14,8 @@ ACME (Adaptive Customization of Large Models via Distributed Systems) is a frame
 ```
 ├── data/                    # Datasets (place CIFAR-100 or Stanford Cars here)
 ├── draw/                    # Figure generation scripts and outputs
-│		├── draw_challenge_motiv/            
-│   └── draw_experi/  			 
+│   ├── draw_challenge_motiv/  # Challenge-related visualizations
+│   └── draw_experi/           # Experiment result visualizations
 ├── log/                     # Logs during training/experiments
 ├── model/                   # Model definitions and pretrained models
 ├── moti/                    # Motivation analysis materials
@@ -24,8 +24,8 @@ ACME (Adaptive Customization of Large Models via Distributed Systems) is a frame
 ├── runs/                    # Experimental results and intermediate files
 └── src/                     # Main source code
     ├── backup/              # Customized files to override parts of Transformers
-    └── shell/               # Shell scripts for automated execution
-    └── third_part/ 				 # ⚠️Independent implementation for Part III of the paper⚠️
+    ├── shell/               # Shell scripts for automated execution
+    └── third_part/          # ⚠️ Independent implementation for Part III of the paper 
 ```
 
 ## 🛠️ Prerequisites
