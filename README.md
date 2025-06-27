@@ -44,8 +44,20 @@ ACME (Adaptive Customization of Large Models via Distributed Systems) is a frame
 3. Download datasets:
 
    - [CIFAR-100](https://www.cs.toronto.edu/~kriz/cifar.html)
-   - [Stanford Cars](https://docs.pytorch.org/vision/stable/generated/torchvision.datasets.StanfordCars.html)
+   - [Stanford Cars](https://ai.stanford.edu/~jkrause/cars/car_dataset.html)
    - Place them in the `data/` directory.
+  
+    > ⚠️ **Note on Stanford Cars Dataset**  
+    > The official source of the Stanford Cars dataset is currently **unavailable or corrupted**, causing failures when using:
+    >
+    > ```python
+    > torchvision.datasets.StanfordCars(...)
+    > ```
+    >
+    > **Solution:**  
+    > 1. Download the dataset manually from [Kaggle](https://www.kaggle.com/datasets/eduardo4jesus/stanford-cars-dataset).  
+    > 2. Extract and organize it into the following folder structure:
+     
 
 4. ⚠️ **Important: Overwriting Transformers Source Code**
 
@@ -98,5 +110,5 @@ ACME (Adaptive Customization of Large Models via Distributed Systems) is a frame
 |------|------|------|
 | Model | vit-base-patch16-224 | [Download from Hugging Face](https://huggingface.co/google/vit-base-patch16-224) |
 | Dataset | CIFAR-100 | [Official CIFAR Site](https://www.cs.toronto.edu/~kriz/cifar.html) |
-| Dataset | ~~Stanford Cars~~ | [~~Stanford AI Lab~~](https://ai.stanford.edu/~jkrause/cars/car_dataset.html) 已失效|
+| Dataset | ~~Stanford Cars~~ | [~~Stanford AI Lab~~](https://ai.stanford.edu/~jkrause/cars/car_dataset.html) unavailable|
 
