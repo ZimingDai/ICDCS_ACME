@@ -44,7 +44,7 @@ ACME (Adaptive Customization of Large Models via Distributed Systems) is a frame
 3. Download datasets:
 
    - [CIFAR-100](https://www.cs.toronto.edu/~kriz/cifar.html)
-   - [Stanford Cars](https://ai.stanford.edu/~jkrause/cars/car_dataset.html)
+   - [Stanford Cars](https://docs.pytorch.org/vision/stable/generated/torchvision.datasets.StanfordCars.html)
    - Place them in the `data/` directory.
 
 4. ⚠️ **Important: Overwriting Transformers Source Code**
@@ -98,4 +98,5 @@ ACME (Adaptive Customization of Large Models via Distributed Systems) is a frame
 |------|------|------|
 | Model | vit-base-patch16-224 | [Download from Hugging Face](https://huggingface.co/google/vit-base-patch16-224) |
 | Dataset | CIFAR-100 | [Official CIFAR Site](https://www.cs.toronto.edu/~kriz/cifar.html) |
-| Dataset | Stanford Cars | [Stanford AI Lab](https://ai.stanford.edu/~jkrause/cars/car_dataset.html) |
+| Dataset | ~~Stanford Cars~~ | [~~Stanford AI Lab~~](https://ai.stanford.edu/~jkrause/cars/car_dataset.html) 已失效|
+
